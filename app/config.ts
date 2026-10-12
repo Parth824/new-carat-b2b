@@ -1,4 +1,6 @@
-export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://new-carat-wholesale-canada.parth-globalsurat.chatgpt.site';
+export const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || 'https://new-carat-wholesale-canada.parth-globalsurat.chatgpt.site').replace(/\/+$/, '');
+export const basePath = (process.env.NEXT_PUBLIC_BASE_PATH || '').replace(/\/+$/, '');
+export function localPath(path: string) { return `${basePath}/${path.replace(/^\/+/, '')}`; }
 // Published New Carat business telephone. Confirm WhatsApp registration before public launch.
 export const whatsappNumber = (process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? '14375598980').replace(/\D/g, '');
 export const leadEndpoint = process.env.NEXT_PUBLIC_LEAD_ENDPOINT || '';
